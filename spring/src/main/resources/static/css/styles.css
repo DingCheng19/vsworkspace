@@ -1,0 +1,27 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#app {
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 18px;
+}

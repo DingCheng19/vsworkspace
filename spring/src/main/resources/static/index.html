@@ -1,0 +1,27 @@
+<!-- src/main/resources/static/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js + Spring MVC</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+
+<div id="app">
+    <h1>Ask a Question</h1>
+    <input v-model="question" placeholder="Type your question here...">
+    <button @click="askQuestion">Ask</button>
+    <div v-if="answer">
+        <h2>Answer:</h2>
+        <p>{{ answer }}</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="/js/vue-app.js"></script>
+
+</body>
+</html>
