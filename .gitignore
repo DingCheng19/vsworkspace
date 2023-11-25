@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+instance/
+*.log
+*.db
+
+# Java
+*.class
+log/
+target/
+mvnw
+.mvn/
+.gradle/
+*.log
+.idea/
+.classpath
+.project
+.settings/
+.vscode/
+build/
+.DS_Store
+Thumbs.db
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk

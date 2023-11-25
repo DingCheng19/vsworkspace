@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Answer</title>
+</head>
+<body>
+    <h1>Question Answer</h1>
+    <form id="qa-form">
+        <label for="question">Question:</label>
+        <input type="text" id="question" name="question" required><br><br>
+        <label for="context">Context:</label>
+        <textarea id="context" name="context" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="answer"></div>
+    <script>
+        document.getElementById("qa-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // Get user input
+            var question = document.getElementById("question").value;
+            var context = document.getElementById("context").value;
+            
+            // Create data object
+            var data = {
+                "question": question,
+                "context": context
+            };
+        
+            // Send a POST request to /qa
+            fetch("/qa", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the answer on the page
+                document.getElementById("answer").innerHTML = "Answer: " + data.answer;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+    </script>
+        
+</body>
+</html>
